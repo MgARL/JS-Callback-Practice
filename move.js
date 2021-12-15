@@ -16,25 +16,33 @@ function move(element) {
 
         function moveCharacter() {
             if (direction === 'west'){
-                x -= 1
+                if (x >= 10){
+                    x -= 1
+                }
             }
         
             if (direction === 'east'){
-                x = x + 1
+                if (x <= 950){
+                    x = x + 1
+                }
             }
         
             if (direction === 'south'){
-                y -= 1
+                if( y >= 120){
+                    y -= 1
+                }
             }
         
             if (direction === 'north'){
-                y += 1
+                if (y <= 900){
+                    y += 1
+                }
             }
             element.style.left = x + 'px'
             element.style.bottom = y + 'px'
         
         }
-
+        
         setInterval(moveCharacter, 1)
 
         document.addEventListener('keydown', (e) => {
